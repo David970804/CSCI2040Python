@@ -3,9 +3,9 @@ def quicksort(a):
 		return a
 	else:
 		pivot=a[len(a)//2]
-		small=[x for x in a if x < pivot]
-		big=[x for x in a if x > pivot]
+		small=quicksort([x for x in a if x < pivot])
+		big=quicksort([x for x in a if x > pivot])
 		middle=[x for x in a if x==pivot]
-		return quicksort(small)+list(middle)+quicksort(big)
+		return small+list(middle)+big
 
 

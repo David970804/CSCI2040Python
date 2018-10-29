@@ -36,12 +36,11 @@ def get_depts_size():
 		file_object = open('dept-prof-updated.pydata','rb')
 		departments = pickle.load(file_object)
 		file_object.close()
-		return departments
+		output={}
+		for key,value in departments.items():
+			output[key] = len(value)
+		return output
 	except Exception as e:
 		print(e)
 		print("Sorry we cannot open dept-prof-updated.pydata")
 
-print(load_data('dept-prof.pydata'),'\n')
-print(query('Andrew'),'\n')
-update()
-print(get_depts_size())
