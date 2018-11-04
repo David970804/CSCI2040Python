@@ -1,0 +1,1 @@
+Opening file document.txt failed!
